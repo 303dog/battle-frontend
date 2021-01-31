@@ -1,15 +1,19 @@
 import React from "react";
 
-// iterate and get all heros with publisher:good
+
 function GoodHeros(props) {
   return (
-    <div>
-      <h1>Good Guys</h1>
-      {props.goodGuys.map((hero) => {
+    <div className="box">
+      <h1>Heros</h1>
+      <p>Choose your Hero!</p>
+      {props.goodGuys.map((goodGuy) => {
         return (
           <>
-            <p>{hero.name}</p>
-            <button onClick={() => props.selectGoodGuy(hero)}>select</button>
+          <div className="hero">
+            <p>{goodGuy.name}</p>
+            <img src={goodGuy.smImg}/>
+            <button onClick={() => props.selectGoodGuy(goodGuy)}>select</button>
+          </div>
           </>
         );
       })}
