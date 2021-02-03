@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path='/' component={HeroContainer}/>
-        <Route exact path='/readyForBattle' component={BattleContainer}/>
+        <Route exact path='/battle' component={BattleContainer}/>
       </Switch>
     </Router>
 

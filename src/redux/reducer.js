@@ -1,12 +1,9 @@
-import { store } from "../store";
+
 
 const initialState = {
     heros: [],
     goodGuy: null,
     evilGuy: null,
-    //readyForBattle: [],
-    //currentSelection: null,
-
 };
 
 const action = {

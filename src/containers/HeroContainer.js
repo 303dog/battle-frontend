@@ -4,37 +4,25 @@ import EvilHeros from "../components/evilHeros";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import {setHeros} from '../redux/actionCreator';
-import {setGood} from '../redux/actionCreator';
-import {setEvil} from '../redux/actionCreator';
+import {setGoodGuy, setEvilGuy} from '../redux/actionCreator';
+
 
 class HeroContainer extends Component {
-  state = {
-    goodGuy: null,
-    evilGuy: null,
-
-  };
+ 
 
   componentDidMount() {
     this.props.setHeros();
   }
 
-  selectGoodGuy = (hero) => {
-      this.setState({ goodGuy: hero });
-  };
-
-  selectEvilGuy = (hero) => {
-    this.setState({ evilGuy: hero });
-  };
-
-  
+  // renderHeros filters the "good" from the "bad" heros
   renderHeros = () => {
     return (
-      !this.state.goodGuy ? (
+      !this.props.goodGuy ? (
       <GoodHeros
         goodGuys={this.props.heros.filter(
           (hero) => hero.alignment === "good"
         )}
-        selectGoodGuy={this.selectGoodGuy}
+        selectGoodGuy={this.props.setGoodGuy}
       />
      ) : (
        <>
@@ -42,31 +30,31 @@ class HeroContainer extends Component {
         evilGuys={this.props.heros.filter(
           (hero) => hero.alignment === "bad"
         )}
-        selectEvilGuy={this.selectEvilGuy}
+        selectEvilGuy={this.props.setEvilGuy}
       />
       </>
       )
     )
   }
 
-
-
+// renderGame handles the order in which functions are called. currently if 
+//  there has not been an evilGuy picked- it will renderHeros to allow the selection of good & bad guys
   renderGame = () => {
     return (
         <div className="main-container">
           <h1>Battle of the Multiverse</h1>
-          {this.state.evilGuy ? <p>ready to fight</p> : this.renderHeros()}
+          {this.props.evilGuy ? <Link to={"/battle"}> Fighters on the ticket. </Link> : this.renderHeros()}
         </div>
     )
   }
-
 
   render() {
     return (
       <>
           {this.renderGame()}
-          <Link to={"/BattleContainer"}>Battle!</Link>
-               
+          {this.renderGame ()? <p></p>: this.renderTheChosen()}
+        
+          
       </>
     );
   }
@@ -80,6 +68,6 @@ const mapStateToProps = (state) => ({
 
 
 
-export default connect(mapStateToProps, { setHeros, setEvil, setGood }) (HeroContainer);
+export default connect(mapStateToProps, { setHeros, setEvilGuy, setGoodGuy }) (HeroContainer);
 
 

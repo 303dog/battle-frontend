@@ -14,26 +14,16 @@ export const setHeros = () => {
   };
 };
 
-export const setGood = (props) => {
-    return (dispatch) => {
-        props.selectGoodGuy = (goodGuy) => {
-            dispatch({
-                type: "SET_GOOD",
-                payload: {
-                    goodGuy,
-                }   
-        })    
-    }
-}}
+export const setGoodGuy = (goodGuy) => ({
+  type: "SET_GOOD",
+  payload: {
+      goodGuy,
+  } 
+})   
 
-export const setEvil = (props) => {
-    return (dispatch) => {
-        props.selectEvilGuy = (evilGuy) => {
-            dispatch({
-                type: "SET_EVIL",
-                payload: {
-                    evilGuy,
-                }   
-        })    
-    }
-}}
+export const setEvilGuy = (evilGuy) => ({
+  type: "SET_EVIL",
+  payload: {
+      evilGuy,
+  } 
+})
