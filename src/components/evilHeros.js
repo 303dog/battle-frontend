@@ -1,5 +1,5 @@
 import React from "react";
-import HeroContainer from "../containers/HeroContainer";
+
 
 function EvilHeros(props) {
     return (
@@ -11,7 +11,7 @@ function EvilHeros(props) {
             <>
             <div className="evil">
               <p>{evilGuy.name}</p>
-              <img src={evilGuy.smImg}/>
+              <img src={evilGuy.smImg} alt="evilguy"/>
               <button onClick={() => props.selectEvilGuy(evilGuy)}>select</button>
             </div>
             </>

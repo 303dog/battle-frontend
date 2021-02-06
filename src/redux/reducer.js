@@ -4,12 +4,10 @@ const initialState = {
     heros: [],
     goodGuy: null,
     evilGuy: null,
+    theChosen: null,
 };
 
-const action = {
-    type: "ADD_TO_BATTLE",
 
-};
 
 
 export const reducer = (state = initialState, action) => {

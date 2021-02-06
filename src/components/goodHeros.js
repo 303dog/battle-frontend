@@ -11,7 +11,7 @@ function GoodHeros(props) {
           <>
           <div className="hero">
             <p>{goodGuy.name}</p>
-            <img src={goodGuy.smImg}/>
+            <img src={goodGuy.smImg} alt="googuy"/>
             <button onClick={() => props.selectGoodGuy(goodGuy)}>select</button>
           </div>
           </>
