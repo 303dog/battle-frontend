@@ -21,6 +21,7 @@ function TicketStats(props) {
             <ul><b><p>VILLAIN: <em>{props.evil.name}</em></p></b>
             </ul>
          </div>
+         
       </div>
        </div>
     </div>

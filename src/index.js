@@ -9,6 +9,8 @@ import {reducer} from './redux/reducer';
 
 
 
+
+
 const store = createStore(
   reducer, 
   compose(

@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import GoodHeros from "../components/goodHeros";
 import EvilHeros from "../components/evilHeros";
 import { connect } from "react-redux";
-import { setHeros } from "../redux/actionCreator";
-import { setGoodGuy, setEvilGuy } from "../redux/actionCreator";
+import { setHeros, setGoodGuy, setEvilGuy } from "../actions/actionCreator";
 
 
 class HeroContainer extends Component {
@@ -43,8 +42,7 @@ const mapStateToProps = (state) => ({
   heros: state.heros,
   goodGuy: state.goodGuy,
   evilGuy: state.evilGuy,
+
 });
 
-export default connect(mapStateToProps, { setHeros, setEvilGuy, setGoodGuy })(
-  HeroContainer
-);
+export default connect(mapStateToProps, { setHeros, setEvilGuy, setGoodGuy })(HeroContainer);

@@ -1,4 +1,6 @@
-//import React from 'react';
+
+
+import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HeroContainer from './containers/HeroContainer';
@@ -16,6 +18,5 @@ function App() {
   );
 }
 
-export default App;
-
+export default App
 
