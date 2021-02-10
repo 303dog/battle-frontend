@@ -1,22 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import TicketStats from "../components/ticketStats";
-import { setGoodGuy, setEvilGuy, setHeros } from "../actions/actionCreator";
+import { setPoints, setGoodGuy, setEvilGuy, setHeros, setWinner } from "../actions/actionCreator";
 import {Link, BrowserRouter as Router, Route} from 'react-router-dom';
 //import RenderStats from "../components/scoreBoard";
-//import { setPoints } from "../actions/actionCreator";
 
 
 class BattleContainer extends Component {
-  state = {
-       winner: null,
-     };
-    
-   //  componentDidMount() {
-   //       this.props.setPoints();
-   //    }
-   //   
-   //   
+        
+      
   letsBattle = () => {
     let good = this.props.goodGuy
     let evil = this.props.evilGuy  
@@ -29,22 +21,22 @@ class BattleContainer extends Component {
         villainPoints++;
       }
     } if (heroPoints > villainPoints) {
-      return this.setState({ winner: good });
+       this.props.setWinner(good);
      
     } else {
-      return this.setState({ winner: evil });                        
+       this.props.setWinner(evil);                        
         
     }
   }; 
   
-  selectWinner = () => {
+  setWinnerPoints = (props) => {
     return (
-      null
+      this.props.setPoints(props)
     );
     }
 
   renderWinner = () => {
-    let champ = this.state.winner
+    let champ = this.props.winner
     champ.wins++
     console.log(champ)
     return (
@@ -55,15 +47,11 @@ class BattleContainer extends Component {
           <h1>{champ.name}</h1>
           <h2>WINS:{champ.wins}</h2>
          
-         <button onClick={null}>Leader Board</button>
+         <button onClick={() => this.props.setPoints(this.props.winner)}>Leader Board</button>
         </div>
       </div>
     );
   };
-
- // handleClick = () => {
- //   return this.props.addPoints()
- // }
     
     
     renderBattle = () => {
@@ -83,7 +71,7 @@ class BattleContainer extends Component {
     return (
       <>
         <div className="main-container">
-          {this.state.winner ? this.renderWinner() : this.renderBattle()}
+          {this.props.winner ? this.renderWinner() : this.renderBattle()}
            
         </div>
       </>
@@ -105,5 +93,5 @@ const mapStateToProps = (state) => ({
 
 });
 
-export default connect(mapStateToProps,  {  setHeros, setEvilGuy, setGoodGuy })(BattleContainer);
+export default connect(mapStateToProps,  {  setWinner, setHeros, setEvilGuy, setPoints, setGoodGuy })(BattleContainer);
  
