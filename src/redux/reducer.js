@@ -1,14 +1,12 @@
 
-
 const initialState = {
     heros: [],
     goodGuy: null,
     evilGuy: null,
     winner: null,
+    points: null,
 
 };
-
-
 
 
 export const reducer = (state = initialState, action) => {
@@ -21,6 +19,8 @@ export const reducer = (state = initialState, action) => {
             return {...state, evilGuy: action.payload.evilGuy};
         case "SET_WINNER":
             return {...state, winner: action.payload.winner};
+        case "SET_POINTS":
+            return {...state, wins: action.payload.wins};
             default:
                 return state;
     }

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import TicketStats from "../components/ticketStats";
 import { setPoints, setGoodGuy, setEvilGuy, setHeros, setWinner } from "../actions/actionCreator";
-import {Link, BrowserRouter as Router, Route} from 'react-router-dom';
-//import RenderStats from "../components/scoreBoard";
+import {Link, BrowserRouter as Router, Route } from 'react-router-dom';
+
 
 
 class BattleContainer extends Component {
@@ -22,68 +22,67 @@ class BattleContainer extends Component {
       }
     } if (heroPoints > villainPoints) {
        this.props.setWinner(good);
-     
     } else {
        this.props.setWinner(evil);                        
-        
     }
   }; 
   
-  setWinnerPoints = (props) => {
-    return (
-      this.props.setPoints(props)
-    );
-    }
 
   renderWinner = () => {
     let champ = this.props.winner
-    champ.wins++
-    console.log(champ)
+    console.log(champ.wins)
     return (
+      <>
       <div className="champion">
         <h1>The Champion</h1>
         <img src={champ.mdImg} alt="Champion" />
         <div>
           <h1>{champ.name}</h1>
-          <h2>WINS:{champ.wins}</h2>
+          <h2>{champ.name} can add another notch to their record!</h2>
          
-         <button onClick={() => this.props.setPoints(this.props.winner)}>Leader Board</button>
+          <button onClick={() => this.props.setPoints(this.props.winner)}>Points</button>
+          <h2> This makes {this.props.winner.wins} career wins!!</h2>
+          
+          
         </div>
       </div>
+      </>
     );
   };
-    
+
+  handleClick = () => {
+    return (
+      <>
+      <Link to={this.props.setPoints(this.props.winner)}>CLICK </Link>
+       <Route path="/battle" render={() => this.props.setPoints(this.props.winner)}/>
+      </>
+    )
+  }
     
     renderBattle = () => {
       return (
       <>
         <TicketStats good={this.props.goodGuy} evil={this.props.evilGuy}/>
         {<button onClick={this.letsBattle}>Lets Battle</button>}
-
       </>
     )
     
   }
   
-  
   render() {
-    console.log(this.props)
     return (
       <>
         <div className="main-container">
           {this.props.winner ? this.renderWinner() : this.renderBattle()}
-           
         </div>
-      </>
-    );
+        <div className="winner">
+           <button onClick={this.renderGame}>New Battle</button>
+        </div>
+        </>
+       )
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addPoints: (id) => {dispatch({type: 'POST', id: id})}
-  }
-}
 
 const mapStateToProps = (state) => ({
   heros: state.heros,

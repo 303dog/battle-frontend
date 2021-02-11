@@ -9,7 +9,6 @@ function TicketStats(props) {
       <div className="marquee">
      <h2><p>HERO   - VS -   VILLAIN</p></h2>
     <img src={props.good.smImg} alt={"hero"}/>
-            
     <img src={props.evil.smImg} alt={"evil"}/>
       <p><b><u></u></b></p>
       <div className="columns">

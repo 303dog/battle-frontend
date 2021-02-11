@@ -38,14 +38,12 @@ export const setPoints = (hero) => {
 
 };
 
-
 export const setWinner = (winner) => ({
   type: "SET_WINNER",
   payload: {
     winner,
   }
 })
-
 
 export const setGoodGuy = (goodGuy) => ({
   type: "SET_GOOD",
