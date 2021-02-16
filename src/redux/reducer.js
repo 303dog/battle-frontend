@@ -4,7 +4,6 @@ const initialState = {
     goodGuy: null,
     evilGuy: null,
     winner: null,
-    points: null,
 
 };
 

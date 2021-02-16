@@ -23,7 +23,7 @@ export const setPoints = (hero) => {
         Accept: 'application/json', 
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify( hero )
+      body: JSON.stringify( hero.wins )
     })
     .then(response => response.json())
     .then((wins) => {
@@ -35,7 +35,6 @@ export const setPoints = (hero) => {
             });
     })
   }
-
 };
 
 export const setWinner = (winner) => ({

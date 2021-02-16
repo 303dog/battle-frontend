@@ -15,6 +15,13 @@ img {
   border: 3px solid green;
 }
 
+.stats {
+  text-align: center;
+  padding: 20px;
+  border: 20px solid rgb(247, 122, 5);
+  background-color: rgb(242, 247, 184);
+}
+
 .main-container {
   text-align: center;
 }
@@ -34,4 +41,5 @@ img {
   padding: 20px;
   border: 2px solid rgb(255, 3, 3);
 }
+
 

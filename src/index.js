@@ -8,9 +8,6 @@ import logger from 'redux-logger';
 import {reducer} from './redux/reducer';
 
 
-
-
-
 const store = createStore(
   reducer, 
   compose(
@@ -21,6 +18,8 @@ const store = createStore(
   )
 );
 
+
+
 ReactDOM.render( 
   <Provider store={store}>
     <App />
@@ -28,6 +27,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
 
