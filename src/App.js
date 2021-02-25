@@ -16,7 +16,6 @@ function App() {
         <Route exact path='/winner' component={WinnerContainer}/>
       </Switch>
     </Router>
-
   );
 }
 

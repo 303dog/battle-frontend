@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import GoodHeros from "../components/goodHeros";
-import EvilHeros from "../components/evilHeros";
 import { connect } from "react-redux";
 import { setHeros, setGoodGuy, setEvilGuy } from "../actions/actionCreator";
+import Heros from '../components/heros';
 
 
 class HeroContainer extends Component {
@@ -11,31 +10,20 @@ class HeroContainer extends Component {
   }
 
  
-  renderHeros = () => {
-    return !this.props.goodGuy ? (
-      <GoodHeros
-        goodGuys={this.props.heros.filter((hero) => hero.alignment === "good")}
-        selectGoodGuy={this.props.setGoodGuy}
-      />
-    ) : (
-      <>
-        <EvilHeros
-          evilGuys={this.props.heros.filter((hero) => hero.alignment === "bad")}
-          selectEvilGuy={this.props.setEvilGuy}
-        />
-      </>
-    );
-  };
 
-  renderGame = () => {
+  renderPair = () => {
     return this.props.evilGuy
       ? this.props.history.push("/battle")
-      : this.renderHeros();
+      : <Heros />
   };
 
   render() {
-    return <>{this.renderGame()}</>;
-  }
+    return (
+    <>
+   
+    {this.renderPair()}
+    </>
+    )}
 }
 
 const mapStateToProps = (state) => ({

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 class BattleContainer extends Component {
         
-      
   letsBattle = () => {
     let good = this.props.goodGuy
     let evil = this.props.evilGuy  

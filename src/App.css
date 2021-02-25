@@ -12,14 +12,35 @@ img {
 
 .box {
   text-align: center;
-  border: 3px solid green;
+  border-radius: 80px;
+  border: 20px solid green;
+}
+
+.sorted {
+  text-align: center;
+  border: 3px solid rgb(247, 7, 247);
 }
 
 .stats {
   text-align: center;
   padding: 20px;
+  border-radius: 80px;
   border: 20px solid rgb(247, 122, 5);
-  background-color: rgb(242, 247, 184);
+  background-color: rgb(233, 241, 161);
+}
+
+.champion {
+  text-align: center;  
+  border: 20px solid rgb(84, 157, 87);
+  border-radius: 30px;
+  background-color: rgb(248, 196, 240);
+}
+
+.chosen {
+  text-align: center;  
+  border: 20px solid rgb(243, 103, 22);
+  border-radius: 30px;
+  background-color: rgb(248, 196, 240);
 }
 
 .main-container {
@@ -28,6 +49,7 @@ img {
 
 .marquee {
   text-align: center;
+  background-color: rgb(224, 219, 226);
 }
 
 .float-container {
