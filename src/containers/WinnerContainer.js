@@ -12,7 +12,7 @@ class WinnerContainer extends Component {
               <div className="stats">
                   <h1>Champion    {winner.name} </h1>
                   <img src={winner.mdImg} alt={"champion"}/>
-                  <h2>Career Victories: <b>{winner.wins}</b></h2>
+                  <h2>Total Career Wins: <b>{winner.wins}</b></h2>
               </div>
           )
       }

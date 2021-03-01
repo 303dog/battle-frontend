@@ -5,20 +5,35 @@ import GoodHeros from "../components/goodHeros";
 import EvilHeros from "../components/evilHeros";
 
 
-
-
 class Heros extends Component {
- 
-
+  constructor (props){
+    super(props)
+  this.sortByWins = this.sortByWins.bind(this)
+  this.state = {
+    newSortedList: [],
+  }
+}
 
   componentDidMount() {
     this.props.setHeros()    
   }
     
+  sortByWins = () => {
+    this.setState({
+      newSortedList: this.props.heros
+    })
+    return (
+    this.props.heros.sort((a, b) => (a.wins < b.wins) ? 1 : -1).map(({}) => (
+      console.log(this.state.newSortedList),
+      <div>{this.newSortedList}</div>
+        ),)
+        )      
+      }
   
  renderHeros = () => {
    return !this.props.goodGuy ? (
      <>
+     <button type="button" onClick={() => this.sortByWins()}>SORT by Wins</button>  
     <GoodHeros
     goodGuys={this.props.heros.filter((hero) => hero.alignment === "good")}
     selectGoodGuy={this.props.setGoodGuy}
@@ -26,6 +41,7 @@ class Heros extends Component {
      </>
      ) : (
     <>
+    <button type="button" onClick={() => this.sortByWins()}>SORT by Wins</button>  
     <EvilHeros
       evilGuys={this.props.heros.filter((hero) => hero.alignment === "bad")}
       selectEvilGuy={this.props.setEvilGuy}
