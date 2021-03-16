@@ -1,1 +1,4 @@
 
+Here I wanted to do something a little different from my previous projects. I seeded my database from a superheroes api and decided to create an application that allows you to choose 1 hero and 1 villain to put in the ring together and battle it out…. Answering the highly debatable question of “Who would win!?”  I left some room to add more features as I learn more technologies. I would like to add a "fight scene" or sorts with animation to create some drama and suspense.
+
+I used React.js on the frontend which handles my stateless components. RESTful Routing via react-router. Modifying and responding to state change is Redux middleware. Thunk to send and receive data asynchronously. Again, my focus was writing clean quality code as DRY as possible. Fetch GETs and POSTs to the rails api backend, there are no JQuery methods. 
