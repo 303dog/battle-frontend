@@ -65,11 +65,11 @@ class BattleContainer extends Component {
         <img src={champ.mdImg} alt="Champion" />
         </div>
         <div className="columns">
-          <h2>This makes a career total of {champ.wins} for {champ.name}</h2> 
+         
         </div>
         <div>
           <h2> One more win for the <u>{champ.alignment}</u> guys!</h2>
-          <div className="title">          <h2>{good.name} <u>{this.state.goodPoints}</u> pts  /vs\  {evil.name} <u>{this.state.evilPoints}</u> pts</h2>
+          <div className="title"><h2>This makes a career total of {champ.wins} for {champ.name}</h2>
           </div>
 
          <Link to="/" render={() => this.addPointToWins()} > Return</Link>
