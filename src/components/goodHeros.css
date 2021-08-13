@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+
+
+.good__box {
+    background: rgb(2,209,248);
+    background: linear-gradient(90deg, rgba(2,209,248,1) 0%, rgba(230,230,232,0.08566224341299022) 100%);
+    border-radius: 1.%;
+    font-family: 'Bangers', cursive;
+}
+
+.innerbox__good {
+    transform: rotate(5deg);
+    margin:15px;
+    padding:0 23px;
+  }
+
+
+.box{
+    margin:25px;
+    width:50vw;
+    height:50vh;
+    background:rgb(248, 242, 242);
+    border: solid black;
+    border-color: black;
+    
+  }
+
+.title__goodbar {
+    border-width: 3px 3px 7px 7px;
+    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-4deg);
+    text-align: center;
+    font-size:35px;
+}
+
+.heros {
+    display: flex;
+}
+
+
+
+.row {
+    margin: 1% 1%;
+}
+
+.column {
+    float: left;
+    width: 13vw;
+    height: 20vh;
+    margin-top: 6%;
+    margin-bottom: 2%;
+    padding: 7% 1%;
+    
+  }
+
+  .card:hover {
+    box-shadow: 0 24px 90px 0 rgba(0,0,0,0.2);
+  }
+
+.card {
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 85%;
+    border-radius: 10%;
+    border: 2px solid rgb(191, 221, 245);
+    background: rgb(2,209,248);
+    background: linear-gradient(90deg, rgb(217, 223, 225) 0%, rgba(230,230,232,0.08566224341299022) 100%);
+}
+
+img {
+    border-radius: 45%;
+}
+
+.select {
+    background-color: #000000;
+    border-radius: 90%;
+    color: white;
+    padding: 5% 5%;
+    text-align: center;
+    display: inline-block;
+    font-size: 60%;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+

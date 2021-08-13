@@ -4,6 +4,7 @@ import TicketStats from "../components/ticketStats";
 import { setPoints, setGoodGuy, setEvilGuy, setWinner } from "../actions/actionCreator";
 import { Link, Route } from 'react-router-dom';
 import HeroContainer from '../containers/HeroContainer';
+import './Battle.css';
 
 class BattleContainer extends Component {
   state = {
@@ -52,34 +53,33 @@ class BattleContainer extends Component {
     )
   }
   
-
   renderWinner = () => {
-    let champ = this.state.winner
-    let evil = this.props.evilGuy
-    let good = this.props.goodGuy
+    let champ = this.state.winner;
     return (
-      <>
       <div className="champion">
-        <h1>The Victor!!!</h1>
-        <div className="float1">
-        <img src={champ.mdImg} alt="Champion" />
+      <div className="oppOne evenboxinnerB">
+      <h1>The Victor!!!</h1>
+      </div>
+      <div className="battle__columns">
+        <img className='champPic' src={champ.mdImg} alt="Champion" />
         </div>
-        <div className="columns">
          
-        </div>
-        <div>
+        <div className="battle__title">
           <h2> One more win for the <u>{champ.alignment}</u> guys!</h2>
-          <div className="title"><h2>This makes a career total of {champ.wins} for {champ.name}</h2>
+          <div className="battle__titleB boxz"><h2>This makes a career total of {champ.wins} for {champ.name}</h2>
           </div>
-
-         <Link to="/" render={() => this.addPointToWins()} > Return</Link>
-          <button onClick={() => this.addPointToWins(this.state.winner)}>Points</button>
           
+          <button onClick={() => {this.addPointToWins(this.state.winner)} } className='point__button'>Points</button>
+          <Link to={{
+            pathname: '/hero',
+            state: { heros: false}
+          }}> pop
+            </Link>
         </div>
       </div>
-      </>
     );
   };
+
 
 
     

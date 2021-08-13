@@ -1,0 +1,148 @@
+
+
+
+.champion {
+background: conic-gradient( from .00turn at 0%,
+red, orange, yellow, 
+green, blue, purple);
+
+}
+
+.linkButt {
+    background-color: #000000;
+    border-radius: 90%;
+    color: white;
+    padding: 2% 2%;
+    text-align: center;
+    display: inline-block;
+    font-size: 60%;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+.point__button {
+    background-color: #000000;
+    border-radius: 90%;
+    color: white;
+    padding: 2% 2%;
+    text-align: center;
+    display: inline-block;
+    font-size: 60%;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+.champPic  {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+}
+
+.boxB{
+    margin:25px;
+    width:250px;
+    height:250px;
+    background:#fff;
+    border: solid black;
+    border-color: black;
+    float:left; 
+}
+
+.oppOne {
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    width: 75%;
+    font-size: 30px;
+}
+
+.box3{
+    width:350px;
+    border-width: 3px 3px 5px 5px;
+    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(0deg);
+    position: center;
+  }
+
+  .boxz {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    
+  }
+
+  .battle__columns {
+    padding-left: 27%;
+    padding-right: 27%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+.evenboxinnerB{
+    transform: rotate(1deg);
+    margin-left: auto;
+    margin-right: auto;
+    padding:0 5px;
+    background:rgb(158, 188, 243);
+    border:5px solid #222;
+    box-shadow:9px 9px 0 #222;
+    position: center;
+  }
+
+
+.battle__titleB {
+    transform: rotate(3deg);
+    padding:0 65px;
+    background:rgb(158, 188, 243);
+    border:5px solid #222;
+    box-shadow:9px 9px 0 #222;
+}
+
+.battle__title {
+    transform: rotate(-3deg);
+    padding:0 40px;
+    background:rgb(158, 188, 243);
+    border:5px solid #222;
+    box-shadow:9px 9px 0 #222;
+    margin-bottom: 1%;
+}
+
+
+.button2 {
+    background-color: #f80606;
+    border: 5px rgb(248, 252, 8);
+    border-radius: 90%;
+    color: white;
+    padding: 5% 5%;
+    text-align: center;
+    font-size: 100%;
+    margin-top: 10%;
+    margin-left: 10%;
+    cursor: pointer;
+}
+
+.button {
+    height: 50px;
+    background: #ff3232;
+    background: -moz-linear-gradient(-45deg, #ff3232 0%, #ff3030 50%, #282fff 51%, #005dff 100%);
+    background: -webkit-linear-gradient(-45deg, #ff3232 0%,#ff3030 50%,#282fff 51%,#005dff 100%);
+    background: linear-gradient(135deg, #ff3232 0%,#ff3030 50%,#282fff 51%,#005dff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3232', endColorstr='#005dff', GradientType=1 );
+    border-radius: 50%;
+    padding: 5% 3%;
+    text-align: center;
+    font-size: 45px;
+    margin-top: 11%;
+    margin-left: 11%;
+    color: white;
+    cursor: pointer;
+    font-family: 'Bangers', cursive;
+    box-shadow: 3px 3px rgb(255, 238, 0);
+}
+
+.button:hover {
+    box-shadow: 0 25px 50px 0 rgba(0,0,0,0.2);
+    border: 5px solid blue;
+}
+

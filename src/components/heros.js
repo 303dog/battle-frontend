@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setHeros, setGoodGuy, setEvilGuy } from "../actions/actionCreator";
 import GoodHeros from "../components/goodHeros";
 import EvilHeros from "../components/evilHeros";
+//import './heros.css';
 
 
 class Heros extends Component {
@@ -33,7 +34,7 @@ class Heros extends Component {
  renderHeros = () => {
    return !this.props.goodGuy ? (
      <>
-     <button type="button" onClick={() => this.sortByWins()}>SORT by Wins</button>  
+     <button type="button" onClick={() => this.sortByWins()} className='sort'>SORT by Wins</button>  
     <GoodHeros
     goodGuys={this.props.heros.filter((hero) => hero.alignment === "good")}
     selectGoodGuy={this.props.setGoodGuy}
@@ -41,20 +42,23 @@ class Heros extends Component {
      </>
      ) : (
     <>
-    <button type="button" onClick={() => this.sortByWins()}>SORT by Wins</button>  
+    <button type="button" onClick={() => this.sortByWins()} className='sort'>SORT by Wins</button>  
     <EvilHeros
       evilGuys={this.props.heros.filter((hero) => hero.alignment === "bad")}
       selectEvilGuy={this.props.setEvilGuy}
     />
+    
      </>
    );
  };
 
 render() {  
   return (
-    <>
-    {this.renderHeros()}
-    </>
+      <div className="heros__container">
+        <div className="card5">
+          {this.renderHeros()}
+        </div>
+      </div>
   )
 }
 

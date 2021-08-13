@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setHeros, setGoodGuy, setEvilGuy } from "../actions/actionCreator";
 import Heros from '../components/heros';
-
+import './HeroContainer.css';
 
 class HeroContainer extends Component {
+
   componentDidMount() {
     this.props.setHeros();
   }
-
- 
 
   renderPair = () => {
     return this.props.evilGuy
@@ -19,10 +18,9 @@ class HeroContainer extends Component {
 
   render() {
     return (
-    <>
-   
+    <div className="hero__container">
     {this.renderPair()}
-    </>
+    </div>
     )}
 }
 

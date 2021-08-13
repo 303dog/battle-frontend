@@ -7,7 +7,8 @@ img {
 }
 
 .hero {
-  background-color: rgb(209, 209, 252);
+  background-color: rgb(247, 10, 235);
+  
 }
 
 .title {
@@ -90,20 +91,20 @@ img {
 
 .float-container {
   border: 3px solid #fff;
-  padding: 20px;
+  padding: 20%;
 }
 
 .float-child {
   width: 50%;
   float: left;
-  padding: 20px;
+  padding: 2%;
   border: 2px solid rgb(255, 3, 3);
 }
 
 .column {
   float: left;
   width: 12%;
-  padding: 0 0px;
+  padding: 0 4%;
 }
 
 /* Remove extra left and right margins, due to padding in columns */
@@ -115,16 +116,16 @@ img {
 /* Style the counter cards */
 .card {
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  margin: 20px;
+  padding: 20%;
+  margin: 30%;
   text-align: center;
   background-color: #94d5e9;
 }
 
 .cardE {
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  margin: 20px;
+  padding: 20%;
+  margin: 30%;
   text-align: center;
   background-color: #f57474;
 }
