@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import TicketStats from "../components/ticketStats";
-import { setPoints, setGoodGuy, setEvilGuy, setWinner } from "../actions/actionCreator";
+import { setPoints, setGoodGuy, setEvilGuy, setWinner, setGame } from "../actions/actionCreator";
 import { Link, Route } from 'react-router-dom';
-import HeroContainer from '../containers/HeroContainer';
+import HeroContainer from './HeroContainer';
 import './Battle.css';
+
+
+const initialState = {
+  heros: [],
+  goodGuy: null,
+  evilGuy: null,
+  winner: null,
+};
+
+
 
 class BattleContainer extends Component {
   state = {
@@ -44,11 +54,16 @@ class BattleContainer extends Component {
     }
   }; 
 
+
+
   addPointToWins(props) {
     this.props.setPoints(props)
+    console.log("addPoints ReRouting")
     return (
       <>
-        <Route exact path='/' component={HeroContainer}/>
+      
+      <div className='reset'>{this.setState(initialState)}</div>
+      <Route exact path='/' component={HeroContainer}/>
       </>
     )
   }
@@ -71,8 +86,8 @@ class BattleContainer extends Component {
           
           <button onClick={() => {this.addPointToWins(this.state.winner)} } className='point__button'>Points</button>
           <Link to={{
-            pathname: '/hero',
-            state: { heros: false}
+            pathname: '/',
+            state: { heros: undefined}
           }}> pop
             </Link>
         </div>
@@ -109,7 +124,8 @@ const mapStateToProps = (state) => ({
   goodGuy: state.goodGuy,
   evilGuy: state.evilGuy,
   winner: state.winner,
+  
 
 });
 
-export default connect(mapStateToProps,  {  setWinner, setEvilGuy, setPoints, setGoodGuy })(BattleContainer);
+export default connect(mapStateToProps,  {  setWinner, setEvilGuy, setPoints, setGoodGuy, setGame })(BattleContainer);

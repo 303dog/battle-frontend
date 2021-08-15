@@ -58,3 +58,7 @@ export const setEvilGuy = (evilGuy) => ({
   } 
 })
 
+export const setGame = () => ({
+  type: 'RESET_GAME',
+})
+

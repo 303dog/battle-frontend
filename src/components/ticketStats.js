@@ -1,35 +1,30 @@
 import React from "react";
-
+import './ticketStats.css';
 
 function TicketStats(props) {
   return (
     <div className="boxChosen">
-
-      <h1>Main Event</h1>
-      <div className="marquee">
-     <h2><p>HERO   - VS -   VILLAIN</p></h2>
-     <div className="float1">
-    <img src={props.good.smImg} alt={"hero"}/>
-    </div>
-    <div className="float2">
-    <img src={props.evil.smImg} alt={"evil"}/>
-    </div>
-      <p><b><u></u></b></p>
-      <div className="columns">
-          <div className="col-1">
-            <ul><b><p>(H): <em>{props.good.name}</em></p></b>
-            </ul>
-         </div>
-         <div className="col-2">
-            <ul><b><p>(V): <em>{props.evil.name}</em></p></b>
-            <p>Ring the bell for results</p>
-            </ul>
-         </div>
-         
-      </div>
-       </div>
-    </div>
-  );
+      <div className='ticket__title'>
+        <h1>The Main Event</h1>
+        <div className='marquee'>
+          <div className='ticketOne  evenboxinner'>
+            <div className='col-1 box1'>
+              {props.good.name}
+        </div>
+            <img src={props.good.mdImg} alt={"hero"} className='oppImg'/>
+          </div>
+          <div className='ticketTwo evenboxinnerE'>
+            <div className='col-2 box2'>
+              {props.evil.name}
+          </div>
+            <img src={props.evil.mdImg} alt={"evil"} className='oppImg'/>
+          </div>
+            <h3>VS</h3>
+          </div>     
+            <h2>Ring the bell for results</h2>
+        </div>
+    </div>  
+    );
 }            
 
 export default TicketStats;

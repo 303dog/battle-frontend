@@ -1,3 +1,6 @@
+import { setEvilGuy, setGoodGuy, setWinner, setHeros, setGame } from "../actions/actionCreator";
+import { combineReducers } from 'redux'
+
 
 const initialState = {
     heros: [],
@@ -8,6 +11,20 @@ const initialState = {
 
 };
 
+const appReducer = combineReducers({
+    heros: setHeros,
+    good: setGoodGuy,
+    evil: setEvilGuy,
+    winner: setWinner,
+    
+});
+
+export const rootReducer = (state, action) => {
+if (action.type === RESET_GAME) {
+        state = undefined;
+    }
+    return appReducer(state, action);
+}
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
