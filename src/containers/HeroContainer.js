@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setHeros, setGoodGuy, setEvilGuy } from "../actions/actionCreator";
 import Heros from '../components/heros';
 import './HeroContainer.css';
+import { Link, useHistory } from "react-router-dom";
 
 class HeroContainer extends Component {
 

@@ -3,7 +3,7 @@
 
 .champion {
 background: conic-gradient( from .00turn at 0%,
-red, orange, yellow, 
+red, orange, rgb(230, 230, 22), 
 green, blue, purple);
 
 }

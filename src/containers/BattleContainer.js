@@ -5,6 +5,8 @@ import { setPoints, setGoodGuy, setEvilGuy, setWinner, setGame } from "../action
 import { Link, Route } from 'react-router-dom';
 import HeroContainer from './HeroContainer';
 import './Battle.css';
+import WinnerContainer from './WinnerContainer';
+import HomeButton from '../components/homeButton'
 
 
 const initialState = {
@@ -61,9 +63,9 @@ class BattleContainer extends Component {
     console.log("addPoints ReRouting")
     return (
       <>
-      
-      <div className='reset'>{this.setState(initialState)}</div>
-      <Route exact path='/' component={HeroContainer}/>
+      <Route>
+     <WinnerContainer />
+     </Route>
       </>
     )
   }
@@ -85,11 +87,7 @@ class BattleContainer extends Component {
           </div>
           
           <button onClick={() => {this.addPointToWins(this.state.winner)} } className='point__button'>Points</button>
-          <Link to={{
-            pathname: '/',
-            state: { heros: undefined}
-          }}> pop
-            </Link>
+          <HomeButton />
         </div>
       </div>
     );
